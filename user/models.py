@@ -3,6 +3,8 @@ import datetime
 from django.db import models
 from django.utils.function import cache_property
 
+from lib.orm import ModelMixin
+
 class User(models.Model):
     '''用户数据模型'''
     
@@ -34,9 +36,19 @@ class User(models.Model):
             self._profile, _ = Profile.objects.get_or_create(id=self.id)
         return self._profile
         
+    def to_dict(self):
+    	return {
+    		'id' : self.id,
+			'nickname' : self.nickname，
+			'phonenum' : self.phonenum，
+			'avatar' : self.avatar，
+			'location' : self.location，
+			'sex' : self.sex，
+			'age' : self.age,
+    	}
     
     
-class Profile(models.Model):
+class Profile(models.Model, ModelMixin):
     '''用户配置项'''
     
     SEX = (('男', '男'),
