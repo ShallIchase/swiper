@@ -21,16 +21,17 @@ def login(request):
     	
     	# 记录用户状态
     	request.session['uid'] = user.id
-    	return render_json(user.to_dict(), 0)
+    	return render_json(user.to_dict())
     else:
     	return render_json(None, error.VCODE_ERROR)
 
     cache.get(key)
 
+
 def get_profile(request):
     '''获取个人资料'''
-
-    pass
+    user = request.user
+    return render_json(user.profile.to_dict())
 
 def modify_profile(request):
     '''修改个人资料'''
