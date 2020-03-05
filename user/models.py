@@ -20,6 +20,8 @@ class User(models.Model):
     birth_year = models.IntegerField(default=2000)
     birth_month = models.IntegerField(default=1)
     birth_day = models.IntegerField(default=1)
+
+    vip_id = models.IntegerField(default=1)
     
     @cache_property
     def age(self):
