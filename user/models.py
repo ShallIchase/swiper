@@ -39,11 +39,11 @@ class User(models.Model):
     def to_dict(self):
     	return {
     		'id' : self.id,
-			'nickname' : self.nickname，
-			'phonenum' : self.phonenum，
-			'avatar' : self.avatar，
-			'location' : self.location，
-			'sex' : self.sex，
+			'nickname' : self.nickname,
+			'phonenum' : self.phonenum,
+			'avatar' : self.avatar,
+			'location' : self.location,
+			'sex' : self.sex,
 			'age' : self.age,
     	}
     
