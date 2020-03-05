@@ -26,9 +26,10 @@ urlpatterns = [
     url(r'^api/user/profile/modify$', user_api.modify_profile),
     url(r'^api/user/avatar/upload$', user_api.upload_avatar),
 
-    url(r'^api/social/users', social_api.get_users)
-    url(r'^api/social/like', social_api.like)
-    url(r'^api/social/superlike', social_api.superlike)
-    url(r'^api/social/dislike', social_api.dislike)
-    url(r'^api/social/rewind', social_api.rewind)
+    url(r'^api/social/users$', social_api.get_users),
+    url(r'^api/social/like$', social_api.like),
+    url(r'^api/social/superlike$', social_api.superlike),
+    url(r'^api/social/dislike$', social_api.dislike),
+    url(r'^api/social/rewind$', social_api.rewind),
+    url(r'^api/social/friends$', social_api.friends),
 ]
